@@ -12,11 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-const apiRoutes = require('./app/routing/apiRoutes.js');
+const apiRoutes = require('./app/routing/apiRoutes.js')(app);
 // const htmlRoutes = require('./app/routing/htmlRoutes.js')(app);
-
 // app.use('/', htmlRoutes);
-app.use('/', apiRoutes);
+// app.use('/', apiRoutes);s
 
 app.listen(PORT, function() {
   console.log(`App listening on PORT ${PORT}`);
