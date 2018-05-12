@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-const apiRoutes = require('./app/routing/apiRoutes.js')(app);
+const apiRoutes = require('./app/routing/apiRoutes.js');
 // const htmlRoutes = require('./app/routing/htmlRoutes.js')(app);
 
 // app.use('/', htmlRoutes);
