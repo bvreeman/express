@@ -11,7 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-</head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  </head>
 <body>
     <div class="container">
       <h2>Survey Questions</h2>
@@ -310,21 +313,6 @@
         </select>
     </div>
 
-    <div class="form-group">
-        <h3><strong>Question 20</strong></h3>
-
-        <label class="control-label" for="q1" style=font-size:18px>You have a big imagination.</label>
-        <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
-                <option value=""></option>
-        <option value="1">1 (Strongly Disagree)</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5 (Strongly Agree)</option>
-        </select>
-    </div>
-
     <br>
       <br>
   
@@ -349,11 +337,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">×</button>
-            <h2 class="modal-title"><strong>Best Match</strong></h2>
+            <h2 class="modal-title"><strong>Your best match</strong></h2>
           </div>
           <div class="modal-body">
             <h2 id="match-name"></h2>
-            <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+            <img id="match-img">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -363,9 +351,9 @@
       </div>
     </div>
   
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
       // Chosen CSS
-      var config = {
+      let config = {
         ".chosen-select": {},
         ".chosen-select-deselect": {
           allow_single_deselect: true
@@ -381,7 +369,7 @@
         }
       };
   
-      for (var selector in config) {
+      for (let selector in config) {
         $(selector).chosen(config[selector]);
       }
   
@@ -391,7 +379,7 @@
   
         // Form validation
         function validateForm() {
-          var isValid = true;
+          let isValid = true;
           $(".form-control").each(function() {
             if ($(this).val() === "") {
               isValid = false;
@@ -408,9 +396,9 @@
         }
   
         // If all required fields are filled
-        if (validateForm()) {
+        if (validateForm() === true) {
           // Create an object for the user"s data
-          var userData = {
+          let userData = {
             name: $("#name").val(),
             photo: $("#photo").val(),
             scores: [
@@ -441,11 +429,8 @@
         } else {
           alert("Please fill out all fields before submitting!");
         }
+        return false;
       });
-    </script> -->
-  
-  
-  
-  
+    </script>
 </body>
   </html>
