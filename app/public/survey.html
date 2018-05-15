@@ -48,7 +48,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You are persistent.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q2">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -63,7 +63,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You like magic.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q3">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -78,7 +78,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You like to rhyme.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q4">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -93,7 +93,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You feel like you are all alone in this world.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q5">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -108,7 +108,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You like hats.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q6">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -123,7 +123,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You like animals.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q7">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -138,7 +138,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You are curious.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q8">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -153,7 +153,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You like people.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q9">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -168,7 +168,7 @@
 
         <label class="control-label" for="q1" style=font-size:18px>You love honey.</label>
         <br>
-        <select data-placeholder="" class="chosen-select" id="q1">
+        <select data-placeholder="" class="chosen-select" id="q10">
                 <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -416,6 +416,7 @@
           };
   
           // AJAX post the data to the friends API.
+          console.log("Look userData ",userData)
           $.post("/api/friends", userData, function(data) {
   
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.

@@ -9,27 +9,39 @@ module.exports = function(app) {
 
   app.post('/api/friends', function(req, res) {
     const userScores = req.body.scores;
-    const scoresArray = [];
-
-    for (let i = 0; i < bookCharacter.length; i++) {
+    let scoresArr;
+    const match = {
+      lowestNumber: undefined,
+      index: undefined,
+    };
+    bookCharacter.forEach((char, i) => {
+      scoresArr = [];
       let temp = 0;
       for (let j = 0; j < userScores.length; j++) {
-        temp += (Math.abs(parseInt(bookCharacter[i].scores[j]) - parseInt(userScores[j])));
+        temp += Math.abs(parseInt(char.scores[j]) - parseInt(userScores[j]));
+        scoresArr.push(temp);
       }
-      scoresArray.push(temp);
-      console.log(scoresArray);
-    }
+      if (match.lowestNumber === undefined || temp <= match.lowestNumber) {
+        match.lowestNumber = temp;
+        match.index = i;
+      }
 
-    let bff = 0;
-    let scoreCompare = 50;
-    for (let i = 0; i < scoresArray.length; i++) {
-      if (scoresArray[i] <= scoreCompare) {
-        scoreCompare = scoresArray[i];
-        bff = i;
-      }
-    }
+      // console.log(`This is match:${JSON.stringify(match)}`);
+    });
+    // for (let i = 0; i < bookCharacter.length; i++) {
+    // }
+
+
+    // let bff = 0;
+    // let scoreCompare = 50;
+    // for (let i = 0; i < scoresArr.length; i++) {
+    //   if (scoresArr[i] <= scoreCompare) {
+    //     scoreCompare = scoresArr[i];
+    //     bff = i;
+    //   }
+    // }
     // console.log(bookCharacter[bff]);
-    res.json(bookCharacter[bff]);
+    return res.json(bookCharacter[match.index]);
 
     // const characterMatch = {
     //   name: '',
