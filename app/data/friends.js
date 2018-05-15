@@ -1,5 +1,5 @@
 const characterList = [{
-  name: 'George',
+  name: 'George - The Ball That Did Not Like to Bounce',
   photo: 'http://www.brandonvreeman.com/wp-content/uploads/2017/03/George-Large-PNG-300x293.png',
   scores: [5, 4, 3, 4, 5, 1, 3, 4, 3, 3],
 },
