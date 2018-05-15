@@ -1,9 +1,14 @@
 # How to use this repo
 
-1. npm i
+To view this app in action, please go to 
+# https://friendfinderbv.herokuapp.com/
 
-2. install gulp globally npm i -g gulp
+This app runs a survey for the user to answer questions. Upon answering the questions, the user is then able to have their answers ran through to compare it against the book characters in friends.js. This will give the user the closest match.
 
-3. run gulp
+# This repo requires a few pieces to be installed in order for you to change or edit things
 
-4 git remote set-url origin 'insert repository name here without apostraphe'
+1. npm i express
+2. npm i body-parser
+3. npm i path (not sure if this is built in or if it needs to be downloaded)
+
+
